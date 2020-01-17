@@ -1,0 +1,8 @@
+{
+  "name": "js-api-test-framework",
+  "version": "1.0.0",
+  "dependencies": {
+    "axios": "^0.19.1",
+    "mocha": "^7.0.0"
+  }
+}
