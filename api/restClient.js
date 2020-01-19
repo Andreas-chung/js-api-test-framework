@@ -1,8 +1,10 @@
 import axios from 'axios';
 import {expect} from '../index';
-import {debugLog} from "../config";
-const log = debugLog('restClient');
-
+// import {debugLog} from "../config";
+// let log = debugLog('restClient');
+const log = (message) => {
+    console.log(message)
+}
 
 const isRequestLoggingEnabled = () => {
     return true;
@@ -70,9 +72,7 @@ export class RestClient {
     handleRequest = (request) => {
         if (isRequestLoggingEnabled()) {
             log(`Sending ${request.method.toUpperCase()} request to: ${request.url}`);
-            if (request.data !== null && request.data !== undefined) {
-                log('Sending with Body: ', request.data);
-            }
+            request.data && log(`Sending with Body: ${JSON.stringify(request.data)}`);
         }
         return request;
     };
@@ -80,7 +80,7 @@ export class RestClient {
     handleResponse = (response) => {
         if (isRequestLoggingEnabled()) {
             log(`Response from: ${response.config.url} - status: ${response.status}`);
-            response.data && log('Response with Body: ', response.data);
+            response.data && log(`Sending with Body: ${JSON.stringify(response.data)}`);
         }
         return response;
     };

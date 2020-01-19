@@ -1,7 +1,7 @@
-import debug from 'debug';
+// import debug from 'debug';
 export const env = {
-    url: 'https://reqres.in/'
+    url: 'https://reqres.in'
 };
-export const debugLog = (namespace) => {
-    debug(`api-tests:${namespace}`)
-};
+// export const debugLog = (namespace) => {
+//     debug(`api-tests:${namespace}`)
+// };
